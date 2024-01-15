@@ -1,0 +1,113 @@
+/* Header Styles */
+header {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 2.5em; 
+    font-weight: bold;
+}
+
+/* Detail Container Styles */
+.detail-container {
+    background-color: #B0E0E6;
+    box-shadow: 0px 0px 10px #4682B4;
+    padding: 2%;
+    margin: 5px 2%; 
+    margin-top: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Top Container Styles */
+.top-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2%; 
+    margin-top: 15px;
+}
+
+.image-container img {
+    width: 70%; 
+    max-width: 700px; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.desc-container {
+    width: 30%; 
+}
+
+/* Bottom Container Styles */
+.bot-container p {
+    margin-top: 20px;
+    font-size: 1.25em; 
+    text-align: justify;
+}
+
+/* Label and Tech Styles */
+.label-desc {
+    margin-left: 15px;
+    font-size: 1.25em; 
+    font-weight: bold;
+}
+
+.tech-label {
+    margin-top: 2%; 
+}
+
+/* Duration and Technologies Styles */
+.duration {
+    margin-bottom: 20px;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2%; /
+}
+
+.desc-container i {
+    font-size: 2.5em; 
+    margin-top: 10px;
+}
+
+h3 {
+    font-size: 2em; 
+    margin-bottom: 10px;
+}
+
+/* Individual Technology Styles */
+.nodejs, .reactjs, .golang, .python {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date, .time {
+    display: flex;
+    align-items: center;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 1118px) {
+    .top-container {
+        flex-direction: column; 
+    }
+
+    .image-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-container img{
+        width: 80%;
+        object-fit: contain;
+    }
+
+    header{
+        font-size: 2em;
+    }
+
+    .desc-container{
+        width: 100%;
+    }
+}

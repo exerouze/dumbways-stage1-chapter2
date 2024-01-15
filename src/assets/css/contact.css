@@ -1,0 +1,44 @@
+.form-contact {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-items {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+}
+
+.label-style {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.input-style {
+    padding: 5px;
+    background-color:antiquewhite;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-submit {
+    padding: 5px;
+    background-color: #e62129;
+    color: white;
+    font-size: 16px;
+    width: 100px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+header h1{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+    color: black;
+}

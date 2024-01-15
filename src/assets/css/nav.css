@@ -1,0 +1,100 @@
+.navbar {
+    background-color: #b0e0e6;
+    padding: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.navbar-left {
+    margin-left: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: black
+}
+
+.active {
+    color: #e62129;
+}
+
+.navbar-logo {
+    width: 42px;
+}
+
+.navbar-contact-btn {
+    padding: 10px;
+    background-color: #e62129;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.burger-active {
+    background-color: #e62129;
+}
+
+.burger-drop {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+}
+.burger-link {
+    display: none;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid white;
+}
+
+.hidden{
+    display: none;
+}
+
+#burger-button{
+    display: none;
+    cursor: pointer;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-link {
+        display: none;
+    }
+
+    .navbar-contact-btn {
+        display: none;
+    }
+
+    .burger-link {
+        display: block;
+    }
+
+    #burger-button {
+        display: block;
+        margin-right: 10px;
+        font-size: 40px;
+    }
+}

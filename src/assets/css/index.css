@@ -1,0 +1,195 @@
+
+main {
+  background-color: #B0E0E6;
+  box-shadow: 0px 0px 10px #4682B4;
+  padding: 15px;
+  margin: 5px 40px;
+  margin-top: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+.content {
+  text-align: justify;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.contactcv {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.contact {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.cv {
+  padding: 5px 15px;
+}
+
+.contact:hover {
+  background-color: rgb(7, 114, 114);
+}
+
+.cv a:hover {
+  color: #20B2AA;
+}
+
+.socmed {
+  margin-left: 0px;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.socmed a {
+  margin: 0 20px;
+}
+
+.socmed a i.bi {
+  font-size: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.socmed a i.bi:hover {
+  color: #20B2AA;
+  transform: scale(1.2);
+}
+
+.profileimg {
+  background-color: #87CEEB;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 100%; 
+  box-shadow: 0px 0px 10px black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.profileimg img {
+  box-shadow: 0px 0px 10px 1px black;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.content-left {
+  margin: 30px 10px 30px 10px;
+}
+
+
+.content-right {
+  flex: 1;
+  margin-right: 0; 
+}
+
+
+.content-right h3 {
+  margin-top: 10px;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"]{
+        width: 100%;
+    }
+
+  main {
+    width: 100%;
+    flex-direction: column;
+    margin: 5px;
+    margin-top: 40px;
+    align-items: center;
+    box-shadow: none;
+  }
+
+
+  .socmed{
+    text-align: center;
+  }
+  .content-left{
+    width: 90%;
+    
+  }
+
+  .content-right{
+    display: flex;
+    width: 90%;
+    /* margin-right: 20px; */
+    margin: auto;
+  }
+
+  .profileimg{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content h1{
+    font-size: 2em;
+  }
+
+  .navbar{
+    padding: 10px;
+  }
+  
+
+}
+
