@@ -1,4 +1,8 @@
 /* Header Styles */
+body{
+    background-color: #87ceeb;
+}
+
 header {
     margin-top: 15px;
     text-align: center;
