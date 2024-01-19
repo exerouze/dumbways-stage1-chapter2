@@ -139,6 +139,7 @@
 
 .project-content {
   padding: 10px;
+  word-wrap: break-word;
 }
 
 .p-project-content {
@@ -158,7 +159,7 @@
 }
 
 .btn-edit,
-.btn-post {
+.btn-del {
   height: 30px;
   width: 200px;
   padding: 5px 10px;
@@ -166,6 +167,10 @@
   border-radius: 4px;
   background: #111727;
   color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
+
 
 }
 
@@ -179,6 +184,7 @@
   font-weight: 300;
   font-size: 12px;
   line-height: 20px;
+
 }
 
 .project-item p {

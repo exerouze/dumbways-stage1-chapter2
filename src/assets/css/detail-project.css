@@ -44,7 +44,7 @@ header {
 .bot-container p {
     margin-top: 20px;
     font-size: 1.25em; 
-    text-align: justify;
+    word-wrap: break-word;
 }
 
 /* Label and Tech Styles */

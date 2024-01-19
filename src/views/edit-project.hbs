@@ -50,28 +50,28 @@
   <div class="project-container">
     <div class="project-form">
       <div class="form-container">
-        <h1>ADD MY PROJECT</h1>
+        <h1>EDIT MY PROJECT</h1>
         
-        <form action="/project" method="post" class="container mt-5">
+        <form action="/edit-project/{{data.id}}" method="post" class="container mt-5">
           <div class="mb-3">
             <label for="project-name" class="form-label">Project Name</label>
-            <input type="text" class="form-control" id="project-name" aria-describedby="emailHelp" name="nameProject">
+            <input value="{{data.nameProject}}" type="text" class="form-control" id="project-name" aria-describedby="emailHelp" name="nameProject">
           </div>
         
           <div class="row">
             <div class="col">
               <label for="start-date" class="form-label">Start Date</label>
-              <input type="date" class="form-control" id="start-date" name="startDate">
+              <input value="{{data.startDate}}" type="date" class="form-control" id="start-date" name="startDate">
             </div>
             <div class="col">
               <label for="end-date" class="form-label">End Date</label>
-              <input type="date" class="form-control" id="end-date" name="endDate">
+              <input value="{{data.endDate}}" type="date" class="form-control" id="end-date" name="endDate">
             </div>
           </div>
         
           <div class="mb-3">
             <label for="project-desc" class="form-label">Description</label>
-            <textarea class="form-control" id="project-desc" rows="3" name="descProject"></textarea>
+            <textarea class="form-control" id="project-desc" rows="3" name="descProject">{{data.descProject}}</textarea>
           </div>
         
           <div>
@@ -79,27 +79,27 @@
             <div class="technologies-checkbox-group">
               <div class="checkbox-group">
                 <label>
-                  <input type="checkbox" name="tech" value="fa-python"> Python
+                  <input type="checkbox" name="tech" value="fa-python" id="python"> Python
                 </label>
               </div>
               <div class="checkbox-group">
                 <label>
-                  <input type="checkbox" name="tech" value="fa-react"> React.js
+                  <input type="checkbox" name="tech" value="fa-react" id="reactjs"> React.js
                 </label>
               </div>
               <div class="checkbox-group">
                 <label>
-                  <input type="checkbox" name="tech" value="fa-node-js"> Node.js
+                  <input type="checkbox" name="tech" value="fa-node-js" id="nodejs"> Node.js
                 </label>
               </div>
               <div class="checkbox-group">
                 <label>
-                  <input type="checkbox" name="tech" value="fa-golang"> Golang
+                  <input type="checkbox" name="tech" value="fa-golang" id="golang"> Golang
                 </label>
               </div>
             </div>
           </div>
-          <div>
+         <div>
             <label for="formFile" class="form-label">Upload
                 Image</label>
               <input
@@ -119,7 +119,7 @@
     <br>
     <hr>
 
-    <div class="myproject-title">
+    {{!-- <div class="myproject-title">
       <h1>MY PROJECT</h1>
     </div>
 
@@ -127,14 +127,11 @@
       {{#each data}}
       <div class="project-item">
                 <div class="project-image">
-                  <a href="/detail-project/{{@index}}">
                     <img src="../assets/img/detailproject.jpg" alt="Project Image">
-                  </a>
-                    
                 </div>
                 <div class="project-content">
                     <h1>
-                        <a href="/detail-project/{{@index}}" target="_blank">{{this.nameProject}}</a>
+                        <a href="/detail-project/{{this.id}}" target="_blank">{{this.nameProject}}</a>
                     </h1>
                     <div class="detail-project-content">
                         Duration : {{this.interval}}
@@ -150,15 +147,14 @@
                         {{/each}}
                     </div>
                     <div class="btn-group">
-                        <a href="/edit-project/{{@index}}" class="list-btn btn-edit">Edit</a>
+                        <a href="/edit-my-project/{{@index}}" class="list-btn btn-edit">Edit</a>
                         <a href="/delete/{{@index}}" class="list-btn btn-del">Delete</a>
                     </div>
                 </div>
             </div>`;
       {{/each}}
       
-      <!-- dynamic content would be here -->
-      
+       --}}
 
 
     </div>
@@ -172,5 +168,26 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
   integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
   crossorigin="anonymous"></script>
+
+
+  <script>
+      const checkedTech = '{{data.tech}}'; 
+      const python =
+      document.getElementById("python"); 
+      const reactjs =
+      document.getElementById("reactjs"); 
+      const nodejs =
+      document.getElementById("nodejs"); 
+      const golang =
+      document.getElementById("golang"); 
+      python.checked =
+      checkedTech.includes("fa-python"); 
+      reactjs.checked =
+      checkedTech.includes("fa-react"); 
+      nodejs.checked =
+      checkedTech.includes("fa-node-js"); 
+      golang.checked =
+      checkedTech.includes("fa-golang");
+    </script>
 </body>
 </html>

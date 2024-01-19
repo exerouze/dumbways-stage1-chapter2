@@ -48,7 +48,7 @@
   </nav>
 
 
-    <header class="title">{{id}}</header>
+    <header class="title">{{data.nameProject}}</header>
 
 
     <div class="detail-container">
@@ -63,19 +63,22 @@
                     <h3>Duration</h3>
                     <div class="date">
                         <i class="fa-solid fa-calendar-days"></i>
-                        <div class="label-desc">19 Des 2023 - 4 Jan 2023</div>
+                        <div class="label-desc">{{data.startDate}} - {{data.endDate}}</div>
                     </div>
                     <div class="time">
                         <i class="fa-solid fa-clock"></i>
-                        <div class="label-desc">1 Month</div>
+                        <div class="label-desc">{{data.interval}}</div>
                     </div>
                 </div>
     
                 <h3 class="tech-label">Technologies</h3>
     
                 <div class="technologies">
+                    {{#each data.tech}}
+                          <i class="fa-brands {{this}}"></i>
+                    {{/each}}
     
-                    <div class="left-tech">
+                    {{!-- <div class="left-tech">
                         <div class="nodejs">
                             <i class="fa-brands fa-node-js"></i>
                             <div class="label-desc">Node.Js</div>
@@ -96,7 +99,7 @@
                             <i class="fa-brands fa-golang"></i>
                             <div class="label-desc">Golang</div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
@@ -104,11 +107,7 @@
 
         <div class="bot-container">
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum veniam tempora nemo at cumque sit. Voluptate maxime debitis consequatur numquam iure est asperiores molestiae id atque sequi ab, itaque ullam.
-                Voluptas rerum blanditiis commodi? Debitis magni aliquid a ipsum quasi eveniet tempora! Labore earum doloribus iste cumque mollitia? Veritatis ipsum molestiae provident odio? Illo repellat quae magnam quia commodi quibusdam!
-                Cupiditate facere consectetur laudantium minima assumenda mollitia blanditiis omnis enim laborum delectus iusto nostrum quisquam similique, quasi sint modi exercitationem possimus obcaecati impedit alias? Sapiente sunt magni facilis tempore fugit?
-                Consequatur deleniti mollitia quae, ipsa facilis nulla veritatis illo totam laudantium atque libero ipsum repellat voluptatibus soluta, animi fugiat maxime, asperiores temporibus sit. Quaerat ullam harum, minus ad aperiam natus!
-                Inventore qui quae dolores saepe unde magni dolorum omnis veniam quisquam excepturi voluptatibus, illo porro quas corrupti voluptates, in aperiam blanditiis voluptatem asperiores? Asperiores expedita vero doloribus consequuntur modi dolorem!
+                {{data.descProject}}
             </p>
         </div>
         
