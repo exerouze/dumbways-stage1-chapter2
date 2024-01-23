@@ -16,8 +16,8 @@
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
-<body style="background-color: #87ceeb;">
- <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" style="background-color:#b0e0e6 !important;">
+<body style="background-color: #e3e7eb;">
+ <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" style="background-color:#ffffff !important;">
     <div class="container-fluid">
       <a class="navbar-brand" href="/index">
         <img src="../assets/img/dumbwayslogo.png" alt="dumbwayslogo" style="width: 2.5em;">
@@ -127,21 +127,21 @@
       {{#each data}}
       <div class="project-item">
                 <div class="project-image">
-                  <a href="/detail-project/{{@index}}">
+                  <a href="/detail-project/{{this.id}}">
                     <img src="../assets/img/detailproject.jpg" alt="Project Image">
                   </a>
                     
                 </div>
                 <div class="project-content">
                     <h1>
-                        <a href="/detail-project/{{@index}}" target="_blank">{{this.nameProject}}</a>
+                        <a href="/detail-project/{{this.id}}" target="_blank">{{this.name_project}}</a>
                     </h1>
                     <div class="detail-project-content">
                         Duration : {{this.interval}}
                     </div>
                     <div class="p-project-content">
                         <p>
-                            {{this.descProject}}
+                            {{this.desc_project}}
                         </p>
                     </div>
                     <div class="icon-checkbox">
@@ -150,11 +150,11 @@
                         {{/each}}
                     </div>
                     <div class="btn-group">
-                        <a href="/edit-project/{{@index}}" class="list-btn btn-edit">Edit</a>
-                        <a href="/delete/{{@index}}" class="list-btn btn-del">Delete</a>
+                        <a href="/edit-project/{{this.id}}" class="list-btn btn-edit">Edit</a>
+                        <a href="/delete/{{this.id}}" class="list-btn btn-del">Delete</a>
                     </div>
                 </div>
-            </div>`;
+            </div>
       {{/each}}
       
       <!-- dynamic content would be here -->
