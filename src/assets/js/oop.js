@@ -1,3 +1,4 @@
+/** 
 class Card {
     #image = "";
     #content = "";
@@ -69,4 +70,77 @@ for (let i = 0; i < cards.length; i++) {
     cardHtml += cards[i].html();
 }
 
-document.getElementById("card").innerHTML = cardHtml;
+document.getElementById("card").innerHTML = cardHtml; 
+*/
+
+function getDataTestimonials() {
+  return new Promise((myResolve, myReject) => {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", "https://api.npoint.io/ff4190e2696d25c4bd21", true); // mengirim request
+
+    xhttp.onload = () => {
+      if (xhttp.status === 200) {
+        const responseText = JSON.parse(xhttp.responseText); // merubah data yang di ambil dari fake api, string menjadi object
+        myResolve(responseText); // jika dipenuhi
+      } else {
+        myReject("ERROR!"); // jika tidak terpenuhi
+      }
+    };
+
+    xhttp.onerror = () => {
+      myReject("Network Error!");
+    };
+
+    xhttp.send(); // mengirim request
+  });
+}
+
+async function allTestimonials() {
+  const testimonials = await getDataTestimonials();
+  const myTestimonialsEL = testimonials.map((item) => {
+    return `
+    <div class="oopCard">
+                <img src="${item.image}" class="oopImg" alt="">
+                <p class="oopDesc">${item.content}</p>
+                <p class="oopAuthor">${item.author}</p>
+                <p class="testimonials-project-rating">
+                  ${item.rating}<i class="ri-star-fill"></i>
+                </p>
+            </div>
+    `;
+  });
+  document.querySelector(".oopContainer").innerHTML =
+    myTestimonialsEL.join(" ");
+}
+allTestimonials();
+
+async function filterTestimonials(rating) {
+  const testimonials = await getDataTestimonials();
+  const filteredTestimonial = testimonials
+    .filter((item) => item.rating === rating)
+    .map((item) => {
+      return `
+      <div class="oopCard">
+                <img src="${item.image}" class="oopImg" alt="">
+                <p class="oopDesc">${item.content}</p>
+                <p class="oopAuthor">${item.author} Company</p>
+                <p class="testimonials-project-rating">
+                  ${item.rating}<i class="ri-star-fill"></i>
+                </p>
+            </div>
+         `;
+    });
+
+  if (!filteredTestimonial.length) {
+    return (document.querySelector(
+      ".oopContainer"
+    ).innerHTML = `<div class="not-found-box">
+      <img src="asset/img/notfound.jpg" alt="" class="not-found img" />
+      <h1 class="not-found-title">Data not found!</h1>
+      </div>
+      `);
+  }
+  document.querySelector(".oopContainer").innerHTML =
+    filteredTestimonial.join(" ");
+}

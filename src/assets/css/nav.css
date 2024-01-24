@@ -88,6 +88,10 @@
         display: none;
     }
 
+    .nav-right {
+        display: none;
+    }
+
     .burger-link {
         display: block;
     }

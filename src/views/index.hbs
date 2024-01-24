@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,115 +6,192 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
     />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/index.css" />
     <title>Day 2 - Form & Navbar</title>
   </head>
   <body>
-   <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" style="background-color:#ffffff !important;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/index">
-        <img src="../assets/img/dumbwayslogo.png" alt="dumbwayslogo" style="width: 2.5em;">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/index">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/project">My Project</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/oop">OOP</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link d-lg-none" href="/contact">Contact Me</a>
-                  </li>
-              </ul>
-          </div>
-          <a href="/contact" type="button" class="btn btn-danger d-none d-lg-block">Contact Me</a>
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary px-4"
+      style="background-color:#ffffff !important;"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index">
+          <img
+            src="../assets/img/dumbwayslogo.png"
+            alt="dumbwayslogo"
+            style="width: 2.5em;"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/index"
+              >Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/project">My Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/oop">Testimonials</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link d-lg-none" href="/register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-none" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-none" href="/contact">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-right d-flex justify-content-end d-none d-lg-flex">
+          <ul class="navbar-nav me-4 mb-2 mb-lg-0 ">
+            {{#if handleLogin}}
+            <li class="nav-item">
+              <a class="nav-link fw-bold active" >Hello, {{user}}</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/register">Register</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            {{/if}}
+          </ul>
+
+          <a
+            href="/contact"
+            type="button"
+            class="btn btn-danger d-none d-lg-block"
+          >Contact Me</a>
+
+        </div>
+
       </div>
-  </nav>
+    </nav>
 
     <div class="px-4">
-        <main class="container-fluid px-5">
-          <div class="row">
-              <div class="content-left col-md-6">
-                  <div class="content">
-                      <h1>Hi, Welcome to My Personal Website</h1>
-                      <br />
-                      <p>
-                          I'm a college student based in Pamulang, Indonesia, with a passion
-                          for web development. Currently, I'm exploring the realms of
-                          responsive design, front-end, and back-end development. I am
-                          intrigued by cutting-edge technologies like React and Node.js,
-                          actively participating in local developer communities, and engaging
-                          in online courses to stay updated with the latest industry trends.
-                          <br />
-      
-                          My focus lies in crafting exceptional user experiences through clean
-                          design, intuitive navigation, and optimal performance. Eager to
-                          innovate and dedicated to continuous learning, I am confident that
-                          my web development skills will continue to evolve. I'm keen on
-                          collaborating with fellow developers and gaining hands-on experience
-                          to tackle real-world challenges in the field.
-                      </p>
-                  </div>
-      
-                  <div class="contactcv">
-                      <div class="contact">
-                          <a class="btn btn-primary" href="/contact">Contact</a>
-                      </div>
-      
-                      <div class="cv">
-                          <a class="btn btn-success" href="../assets/document/CV Jafar.pdf" download>Download CV
-                              <i class="bi bi-download"></i></a>
-                      </div>
-                  </div>
-      
-                  <div class="socmed">
-                      <a class="btn " href="https://www.instagram.com/jfr.xd" target="_blank">
-                          <i class="bi bi-instagram"></i>
-                      </a>
-      
-                      <a class="btn " href="https://www.facebook.com/jafar.abd.77" target="_blank">
-                          <i class="bi bi-facebook"></i>
-                      </a>
-      
-                      <a class="btn " href="https://wa.me/089501762866" target="_blank">
-                          <i class="bi bi-whatsapp"></i>
-                      </a>
-                      <a class="btn " href="mailto:jafarabdullah586@gmail.com">
-                          <i class="bi bi-envelope"></i>
-                      </a>
-                  </div>
+      <main class="container-fluid px-5">
+        <div class="row">
+          <div class="content-left col-md-6">
+            <div class="content">
+              <h1>Hi, Welcome to My Personal Website</h1>
+              <br />
+              <p>
+                I'm a college student based in Pamulang, Indonesia, with a
+                passion for web development. Currently, I'm exploring the realms
+                of responsive design, front-end, and back-end development. I am
+                intrigued by cutting-edge technologies like React and Node.js,
+                actively participating in local developer communities, and
+                engaging in online courses to stay updated with the latest
+                industry trends.
+                <br />
+
+                My focus lies in crafting exceptional user experiences through
+                clean design, intuitive navigation, and optimal performance.
+                Eager to innovate and dedicated to continuous learning, I am
+                confident that my web development skills will continue to
+                evolve. I'm keen on collaborating with fellow developers and
+                gaining hands-on experience to tackle real-world challenges in
+                the field.
+              </p>
+            </div>
+
+            <div class="contactcv">
+              <div class="contact">
+                <a class="btn btn-primary" href="/contact">Contact</a>
               </div>
-      
-              <div class="content-right col-md-4">
-                  <div class="profileimg">
-                      <img class="img-fluid" src="../assets/img/jafar-profile.jpeg" alt="" />
-                      <h3>Ja'far Abdullah</h3>
-                      <h4>Fullstack Developer</h4>
-                  </div>
+
+              <div class="cv">
+                <a
+                  class="btn btn-success"
+                  href="../assets/document/CV Jafar.pdf"
+                  download
+                >Download CV
+                  <i class="bi bi-download"></i></a>
               </div>
+            </div>
+
+            <div class="socmed">
+              <a
+                class="btn"
+                href="https://www.instagram.com/jfr.xd"
+                target="_blank"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+
+              <a
+                class="btn"
+                href="https://www.facebook.com/jafar.abd.77"
+                target="_blank"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+
+              <a class="btn" href="https://wa.me/089501762866" target="_blank">
+                <i class="bi bi-whatsapp"></i>
+              </a>
+              <a class="btn" href="mailto:jafarabdullah586@gmail.com">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </div>
           </div>
+
+          <div class="content-right col-md-4">
+            <div class="profileimg">
+              <img
+                class="img-fluid"
+                src="../assets/img/jafar-profile.jpeg"
+                alt=""
+              />
+              <h3>Ja'far Abdullah</h3>
+              <h4>Fullstack Developer</h4>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
-  
 
     <script src="../assets/js/nav.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
