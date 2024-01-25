@@ -52,7 +52,7 @@
       <div class="form-container">
         <h1>EDIT MY PROJECT</h1>
         
-        <form action="/edit-project/{{data.id}}" method="post" class="container mt-5">
+        <form action="/edit-project/{{data.id}}" method="post" enctype="multipart/form-data" class="container mt-5">
           <div class="mb-3">
             <label for="project-name" class="form-label">Project Name</label>
             <input value="{{data.name_project}}" type="text" class="form-control" id="project-name" aria-describedby="emailHelp" name="nameProject">
@@ -100,12 +100,13 @@
             </div>
           </div>
          <div>
-            <label for="formFile" class="form-label">Upload
+            <label for="image" class="form-label">Upload
                 Image</label>
               <input
+                name="image"
                 class="form-control form-control-lg px-2"
                 type="file"
-                id="formFile"
+                id="image"
                 style="font-size: 1rem"
               />
           </div>

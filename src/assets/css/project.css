@@ -183,7 +183,7 @@
 
 .detail-project-content {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 1em;
   line-height: 20px;
 
 }
@@ -207,6 +207,13 @@
 .date {
   display: flex;
   gap: 30px;
+}
+
+.span-line{
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 

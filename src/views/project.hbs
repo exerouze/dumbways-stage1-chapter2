@@ -99,13 +99,13 @@
       </div>
     </nav>
 
-  <div class="project-container">
+ <div class="project-container">
     {{#if handleLogin}}
     <div class="project-form">
       <div class="form-container">
         <h1>ADD MY PROJECT</h1>
         
-        <form action="/project" method="post" class="container mt-5">
+        <form action="/project" method="post" class="container mt-5" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="project-name" class="form-label">Project Name</label>
             <input type="text" class="form-control" id="project-name" aria-describedby="emailHelp" name="nameProject">
@@ -153,13 +153,15 @@
             </div>
           </div>
           <div>
-            <label for="formFile" class="form-label">Upload
+            <label for="image" class="form-label">Upload
                 Image</label>
               <input
+                name="image"
                 class="form-control form-control-lg px-2"
                 type="file"
-                id="formFile"
+                id="image"
                 style="font-size: 1rem"
+                required
               />
           </div>
           <div class="button-group">
@@ -170,6 +172,9 @@
     </div>
     {{else}}
     {{/if}}
+
+  {{!-- <div class="project-container">
+  
 
     <br>
   
@@ -183,7 +188,7 @@
       <div class="project-item">
                 <div class="project-image">
                   <a href="/detail-project/{{this.id}}">
-                    <img src="../assets/img/detailproject.jpg" alt="Project Image">
+                    <img src="/uploads/{{this.image}}" alt="Project Image">
                   </a>
                     
                 </div>
@@ -223,7 +228,7 @@
 
 
     </div>
-  </div>
+  </div> --}}
 
   <script src="../assets/js/nav.js"></script>
   {{!-- <script src="../assets/js/project.js"></script> --}}

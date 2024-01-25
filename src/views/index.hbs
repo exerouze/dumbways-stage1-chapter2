@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/project.css">
     <title>Day 2 - Form & Navbar</title>
   </head>
   <body>
@@ -133,7 +134,7 @@
 
               <div class="cv">
                 <a
-                  class="btn btn-success"
+                  class="btn "
                   href="../assets/document/CV Jafar.pdf"
                   download
                 >Download CV
@@ -181,6 +182,61 @@
         </div>
       </main>
     </div>
+
+    <br>
+  
+
+    <div class="myproject-title">
+      <h1>MY PROJECT</h1>
+    </div>
+
+    <div id="project-list" class="project-list">
+      {{#each data}}
+      <div class="project-item">
+                <div class="project-image">
+                  <a href="/detail-project/{{this.id}}">
+                    <img src="/uploads/{{this.image}}" alt="Project Image">
+                  </a>
+                    
+                </div>
+                <div class="project-content">
+                    <h1>
+                        <a href="/detail-project/{{this.id}}" target="_blank">{{this.name_project}}</a>
+                    </h1>
+                    <div class="detail-project-content">
+                        Duration : {{this.interval}} <span class="span-line"> | </span> {{this.name}}
+                    </div>
+                    <div class="p-project-content">
+                        <p>
+                            {{this.desc_project}}
+                        </p>
+                    </div>
+                    <div class="icon-checkbox">
+                        {{#each this.tech}}
+                          <i class="fa-brands {{this}}"></i>
+                        {{/each}}
+                    </div>
+                    
+
+                    
+                    <div class="btn-group">
+                      {{#if handleLogin}}
+                        <a href="/edit-project/{{this.id}}" class="list-btn btn-edit">Edit</a>
+                        <a href="/delete/{{this.id}}" class="list-btn btn-del">Delete</a>
+                      {{/if}}
+                    </div>
+               
+                </div>
+            </div>
+      {{/each}}
+      
+      <!-- dynamic content would be here -->
+      
+
+
+    </div>
+  </div>
+
 
     <script src="../assets/js/nav.js"></script>
     <script
